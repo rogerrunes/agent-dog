@@ -176,10 +176,10 @@ export default function App() {
         const sig=d.decision?.signal, ts=d.timestamp;
         if(sig && ts!==lastTs.current){
           lastTs.current=ts;
+          const t=new Date(ts).toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
+          setFeed(p=>[{time:t,signal:sig,text:d.decision?.commentary||""},...p.slice(0,24)]);
           if(sig!==lastSig.current){
             lastSig.current=sig;
-            const t=new Date(ts).toLocaleTimeString("nl-NL",{hour:"2-digit",minute:"2-digit",second:"2-digit"});
-            setFeed(p=>[{time:t,signal:sig,text:d.decision?.commentary||""},...p.slice(0,24)]);
             spawnParticles(sig);
             setFlash({signal:sig,commentary:d.decision?.commentary});
             if(soundEnabled && sig==="BUY" && buyBark) bark();

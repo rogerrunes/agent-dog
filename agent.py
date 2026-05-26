@@ -24,7 +24,7 @@ load_dotenv()
 
 # ── Config ──────────────────────────────────────────────────────────────────
 PAIR        = "DOG/USD"
-INTERVAL    = 30           # seconds between market data polls (kept frequent)
+INTERVAL    = 15           # seconds between market data polls (kept frequent)
 SIZE_USD    = 50           # paper trade size in USD per trade
 MODE        = os.getenv("MODE", "paper")   # "paper" or "live"
 client      = anthropic.Anthropic()
@@ -289,7 +289,7 @@ def main():
 
     while True:
         try:
-            # 1. Always poll fresh market data (every 30s)
+            # 1. Always poll fresh market data (every 15s)
             ticker    = get_ticker()
             orderbook = get_orderbook()
             portfolio = get_paper_status()

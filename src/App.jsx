@@ -447,7 +447,7 @@ export default function App() {
         <div>
           <div style={{fontFamily:"var(--display)",fontSize:9,fontWeight:700,letterSpacing:".2em",color:"rgba(255,255,255,0.4)",textTransform:"uppercase",marginBottom:8,paddingLeft:4}}>Agent</div>
           <div style={{background:"rgba(255,255,255,0.12)",borderRadius:20,overflow:"hidden",border:"1.5px solid rgba(255,255,255,0.18)"}}>
-            {[{label:"Pair",value:"DOG/USD"},{label:"Interval",value:"30s"},{label:"Trade Size",value:"$50 USD"},{label:"Mode",value:"PAPER"}].map(({label,value},i,a)=>(
+            {[{label:"Pair",value:"DOG/USD"},{label:"Interval",value:"15s"},{label:"Trade Size",value:"$50 USD"},{label:"Mode",value:"PAPER"}].map(({label,value},i,a)=>(
               <div key={label} style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"13px 18px",borderBottom:i<a.length-1?"1px solid rgba(255,255,255,0.08)":"none"}}>
                 <span style={{fontFamily:"var(--mono)",fontSize:10,color:"rgba(255,255,255,0.5)"}}>{label}</span>
                 <span style={{fontFamily:"var(--mono)",fontSize:10,color:"var(--w)"}}>{value}</span>
